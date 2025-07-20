@@ -8,8 +8,6 @@ ymaps.ready(function() {
 
     new ymaps.SuggestView('from');
     new ymaps.SuggestView('to');
-
-    let viaCount = 0;
     
     document.getElementById('add-via').addEventListener('click', function(e) {
         e.preventDefault();
@@ -38,20 +36,6 @@ ymaps.ready(function() {
         viaGroup.querySelector('.via-remove').addEventListener('click', function() {
             viaGroup.remove();
         });
-
-        /*viaCount++;
-        const viaId = 'via-' + viaCount;
-        const viaGroup = document.createElement('div');
-        viaGroup.className = 'via-group';
-        viaGroup.innerHTML = `<input type="text" id="${viaId}" placeholder="Через" autocomplete="off">
-          <button class="via-remove" tabindex="-1" title="Удалить">&#10006;</button>`;
-        document.getElementById('via-list').appendChild(viaGroup);
-
-        new ymaps.SuggestView(viaId);
-
-        viaGroup.querySelector('.via-remove').addEventListener('click', function() {
-            viaGroup.remove();
-        });*/
     });
 
     // построение маршрута
@@ -68,10 +52,9 @@ ymaps.ready(function() {
         viaInputs.forEach(i => {
             if (i.value.trim()) viaPoints.push(i.value.trim());
         });
-        // referencePoints — массив "откуда", промежуточные, "куда"
+
         const referencePoints = [from].concat(viaPoints).concat([to]);
 
-        // удаляем предыдущий маршрут
         if (multiRoute) map.geoObjects.remove(multiRoute);
 
         // создаём новый мультимаршрут
@@ -84,7 +67,6 @@ ymaps.ready(function() {
         });
         map.geoObjects.add(multiRoute);
 
-        // Подстраиваем карту под маршрут
         multiRoute.model.events.add('requestsuccess', function() {
             var activeRoute = multiRoute.getActiveRoute();
             if (activeRoute) {
