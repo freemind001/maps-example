@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Маршруты - Яндекс.API</title>
+  <link rel="stylesheet" href="style.css"/>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=f35add6e-26ee-44ea-bfec-2c28b41b1b0f&lang=ru_RU&suggest_apikey=09ebe4e5-083b-43df-91b2-56deb8a2c29a"
+            type="text/javascript"></script>
+</head>
+<body>
+<div id="panel">
+    <div class="panel-title">Маршрут</div>
+    <input id="from" type="text" placeholder="Откуда:" autocomplete="off">
+    <div id="via-list"></div>
+    <a href="#" id="add-via" class="add-via-link">добавить точку</a>
+    <input id="to" type="text" placeholder="Куда:" autocomplete="off">
+    <button id="build-route">Построить маршрут</button>
+</div>
+<div id="map"></div>
+<script src="script.js"></script>
+</body>
+</html>

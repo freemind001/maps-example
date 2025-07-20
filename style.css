@@ -1,0 +1,106 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+#map {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+#panel {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #aaa;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    min-width: 340px;
+    max-width: 380px;
+    padding: 20px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.panel-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#panel input {
+    width: 100%;
+    margin: 0;
+    padding: 8px 33px 8px 12px;
+    font-size: 15px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    outline: none;
+    box-sizing: border-box;
+    margin-bottom: 2px;
+}
+
+
+.via-group {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.via-group input {
+    flex: 1 1 auto;
+    width: 100%;
+    padding-right: 32px;
+}
+
+.via-remove {
+    position: absolute;
+    right: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #888;
+    padding: 2px;
+    line-height: 1;
+}
+
+.add-via-link {
+    font-size: 14px;
+    color: #0a74db;
+    text-decoration: none;
+    margin-left: 0;
+    cursor: pointer;
+    margin-bottom: 2px;
+}
+
+.add-via-link:hover {
+    text-decoration: underline;
+}
+
+#build-route {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#build-route:hover {
+    background-color: #0056b3;
+}
